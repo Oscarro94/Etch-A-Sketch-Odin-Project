@@ -9,8 +9,8 @@ squares.forEach((div) => div.remove());
 board.style.gridTemplateColumns = `repeat(${size} , 1fr)`;
 board.style.gridTemplateRows = `repeat(${size} , 1fr)`;
 
-let amount = size * size;
-for(let i = 0; i < amount; i++){
+let quantity = size * size;
+for(let i = 0; i < quantity; i++){
     let square = document.createElement("div");
     square.addEventListener("mouseover", colorSquare);
     square.style.backgroundColor = "white";
@@ -20,8 +20,8 @@ for(let i = 0; i < amount; i++){
 
 populateBoard(16);
 
-function changeSize(input){
-    if(input >= 2 || input <= 100){
+function getSize(input){
+    if(input >= 2 && input <= 100){
         document.querySelector('.error').style.display = 'none';
         populateBoard(input);
     }else{
@@ -39,8 +39,8 @@ function colorSquare(){
 }
 }
  
-function changeColor(choice){
-    color = choice
+function setColor(colorChoice){
+    color = colorChoice
 }
 
 function resetBoard(){
@@ -54,9 +54,9 @@ document.querySelector("body").addEventListener("click", (e) => {
     click = !click;
 
     if (click) {
-        document.querySelector('.mode').textContent = "Mode: Coloring"
+        document.querySelector('.status').textContent = "Status: Now You Can Draw"
     }else{
-        document.querySelector('.mode').textContent = "Mode: Not Coloring"
+        document.querySelector('.status').textContent = "Status: You're not allowed to draw"
     }
 }
 })

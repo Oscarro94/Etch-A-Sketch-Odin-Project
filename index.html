@@ -10,22 +10,22 @@
 </head>
 <body>
     <div class="flex-container">
-        <div class="title"><h1>SketchPad</h1></div>
-        <div class="mode">Mode: Coloring</div>
+        <div class="title"><h1>Etch-A-SketchPad</h1></div>
+        <div class="status">Status: Coloring</div>
         <div class="content">
             <div class="board"></div>
             <div class="buttons">
-                <button class="blackButton" onclick="changeColor('black')" >Black</button>
-                <button class="eraserButton" onclick="changeColor('white')">Eraser</button>
-                <button class="grayButton" onclick="changeColor('gray')">Gray</button>
-                <button class="randomButton" onclick="changeColor('random')">Random</button>
+                <button class="blackButton" onclick="setColor('black')" >Black</button>
+                <button class="eraserButton" onclick="setColor('white')">Eraser</button>
+                <button class="grayButton" onclick="setColor('gray')">Gray</button>
+                <button class="randomButton" onclick="setColor('random')">Random</button>
                 <button onclick="resetBoard()">Reset</button>
             </div>
             <div>
-                <input type="text" placeholder="Size of Board" value="16" onchange="changeSize(this.value)"/>
-                <button>Set Size</button>
+                <input type="text" placeholder="Size of Board" value="16" onchange="getSize(this.value)"/>
+                <button>Select Size</button>
             </div>
-            <div class="error">Input must be between 2 and 100</div>
+            <div class="error">Data introduced must be between 2 and 100</div>
         </div>
         
     </div>
